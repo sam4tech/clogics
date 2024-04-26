@@ -14,58 +14,83 @@ division:
 */
 
 #include <stdio.h>
+#include <string.h>
 
 int main()
 {
-    int rollno, contact;
-    char name, fname, mname, address,
+    int rollno ;
+ char name[50], fname[50], mname[50], address[50], contact[50];
     int num1, num2, num3, tot_marks, result, percent;
-    printf("Enter roll number: ");
+   printf("Enter roll number: ");
     scanf("%d",&rollno);
-    printf("Enter student name: ");
-    scanf("%c%d%d%d", &name, &fname, &mname, &address, &contact);
-    printf("Enter student father name: ");
-    scanf("%c", &fname, &mname, &address, &contact);
-    printf("Enter student mother name: ");
-    scanf("%c", &mname, &address, &contact);
-    printf("Enter student address: ");
-    scanf("%c", &address, &contact);
-    printf("Enter student contact: ");
-    scanf("%d", &contact);
+    printf("Enter student name: \n");
+    scanf("%s", name);
+    printf("Enter student father name: \n");
+    scanf("%s", fname);
+    printf("Enter student mother name:\n ");
+    scanf("%s", mname);
+    printf("Enter student address: \n");
+    scanf("%s", address);
+    printf("Enter student contact: \n");
+    scanf("%s", contact);
+  
     
     
     
-    printf("Enter marks for 3 subjects: ");
+    printf("Enter marks for 3 subjects: \n");
     scanf("%d%d%d",&num1, &num2, &num3);
     tot_marks =   num1 + num2 + num3;
-    printf("Total marks for 3 subjects: %d", tot_marks);
+    printf("\nTotal marks for 3 subjects: %d", tot_marks);
     
-    result = tot_marks / 300;
-    percent = result*100;
-    printf("Total percentage: %d", percent);
+   // result = tot_marks / 300;
+    percent = (tot_marks*100) / 300;
+    printf("\nTotal percentage: %d", percent);
     
 
     
-    if( percent > 80 ){
-        printf("GRADE A");
+    if( percent >= 80 ){
+        printf("\nGRADE A");
     }
-    else if( percent >= 60 && percent <= 80 ){
-        printf("GRADE B");
+    else if( percent >= 60 && percent < 80 ){
+        printf("\nGRADE B");
     }
     else if( percent >= 50 && percent < 60 ){
-        printf("GRADE C");
+        printf("\nGRADE C");
     }
     else if( percent >= 45 && percent < 50 ){
-        printf("GRADE D");
+        printf("\nGRADE D");
     }
     else if( percent >= 25 && percent < 45 ){
-        printf("GRADE E");
+        printf("\nGRADE E");
     }
     else if( percent < 25 ){
-        printf("GRADE F");
+        printf("\nGRADE F");
     }
     else{
         printf("FAIL");
     }
     return 0;
 }
+
+/*
+Enter roll number: 004
+Enter student name: 
+sam
+Enter student father name: 
+paa
+Enter student mother name:
+maa
+Enter student address: 
+vcfgdkjljjg'4523
+Enter student contact: 
+1234567890
+Enter marks for 3 subjects: 
+20
+90
+100
+
+Total marks for 3 subjects: 210
+Total percentage: 70
+GRADE B
+
+*/
